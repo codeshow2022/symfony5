@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ data.address.name }}{% endblock %}
+
+ {% block body %}
+     <div class="row">
+         <div class="col-12">
+             <table class="table table-borderless">
+                 <tr>
+                     <th>Name</th>
+                     <td>
+                         <a href="{{ path('app_address_edit', {'address': data.address.id}) }}">{{ data.address.name }}</a>
+                     </td>
+                 </tr>
+                 <tr>
+                     <th>Email Address</th>
+                     <td>{{ (data.address.emailAddress) ? data.address.emailAddress : '--' }}</td>
+                 </tr>
+                 <tr>
+                     <th>Phone #</th>
+                     <td>{{ data.address.phone }}</td>
+                 </tr>
+                 <tr>
+                     <th>Address</th>
+                     <td>{{ data.address.streetAddress }}</td>
+                 </tr>
+                 <tr>
+                     <th>Birthday</th>
+                     <td>{{ (data.address.birthday) ? data.address.birthday|date('m/d') : '--' }}</td>
+                 </tr>
+             </table>
+         </div>
+     </div>
+ {% endblock %}

@@ -1,19 +1,34 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en" class="h-100">
     <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
-
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+        <meta name="generator" content="Hugo 0.98.0">
+        <title>Code Show - {% block title %}Address Book{% endblock %}</title>
+        <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sticky-footer-navbar/">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <meta name="theme-color" content="#712cf9">
+        <link href="/assets/css/bootstrapnav.css" rel="stylesheet">
     </head>
-    <body>
-        {% block body %}{% endblock %}
+    <body class="d-flex flex-column h-100">
+        <header>
+            {% include 'navbar.html.twig' %}
+        </header>
+        {% for label, messages in app.flashes %}
+            {% for message in messages %}
+                <div class="alert alert-{{ label }} w-100">
+                        {{ message }}
+                    </div>
+            {% endfor %}
+        {% endfor %}
+        <main class="container">
+            <div class="p-2 rounded">
+                {% block body %}{% endblock %}
+            </div>
+        </main>
+        {% include 'footer.html.twig' %}
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     </body>
 </html>

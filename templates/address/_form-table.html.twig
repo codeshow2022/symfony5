@@ -1,0 +1,22 @@
+<table class="table table-borderless">
+    <tr>
+        <th>Name</th>
+        <td>{{form_widget(form.name)}}</td>
+    </tr>
+    <tr>
+        <th>Email Address</th>
+        <td>{{ form_widget(form.emailAddress) }}</td>
+    </tr>
+    <tr>
+        <th>Phone Number</th>
+        <td>{{form_widget(form.phone)}}</td>
+    </tr>
+    <tr>
+        <th>Street Address</th>
+        <td>{{form_widget(form.streetAddress)}}</td>
+    </tr>
+    <tr>
+        <th>Birthday</th>
+        <td>{{ form_row(form.birthday, {'label' : false}) }}</td>
+    </tr>
+</table>

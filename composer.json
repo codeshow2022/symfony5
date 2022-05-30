@@ -7,6 +7,8 @@
         "php": ">=7.2.5",
         "ext-ctype": "*",
         "ext-iconv": "*",
+        "ext-http": "*",
+        "ext-json": "*",
         "doctrine/annotations": "^1.0",
         "doctrine/doctrine-bundle": "^2.6",
         "doctrine/doctrine-migrations-bundle": "^3.2",
@@ -35,6 +37,7 @@
         "symfony/runtime": "5.4.*",
         "symfony/security-bundle": "5.4.*",
         "symfony/serializer": "5.4.*",
+        "symfony/slack-notifier": "5.4.*",
         "symfony/string": "5.4.*",
         "symfony/translation": "5.4.*",
         "symfony/twig-bundle": "5.4.*",
@@ -44,7 +47,8 @@
         "symfony/webpack-encore-bundle": "^1.12",
         "symfony/yaml": "5.4.*",
         "twig/extra-bundle": "^2.12|^3.0",
-        "twig/twig": "^2.12|^3.0"
+        "twig/twig": "^2.12|^3.0",
+      "ext-http": "*"
     },
     "config": {
         "allow-plugins": {
